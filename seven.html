@@ -179,6 +179,8 @@ Error message and password prompt
 
 <li>Add device to Zigbee Group</li>
 
+<li>Ikea Light Remote Binding</li>
+
 <li>Test</li>
 
 <li>Xiaomi Light Switch Relay Binding</li>
@@ -9609,7 +9611,7 @@ Error message and password prompt
 <div created="20200620092931962" creator="c" modified="20200620092937890" modifier="cs" title="$:/status/UserName">
 <pre>csw</pre>
 </div>
-<div created="20200620115913344" creator="csw" list="[[Add device to Zigbee Group]] [[Xiaomi Light Switch Relay Binding]] GettingStarted" modified="20200620115919686" modifier="csw" title="$:/StoryList">
+<div created="20200620115913344" creator="csw" list="[[Ikea Light Remote Binding]] [[Add device to Zigbee Group]] [[Xiaomi Light Switch Relay Binding]] GettingStarted" modified="20200620115919686" modifier="csw" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9786,6 +9788,17 @@ Payload: `&lt;device name&gt;`
 
 See [[https://www.zigbee2mqtt.io/information/groups.html|https://www.zigbee2mqtt.io/information/groups.html]]
 </pre>
+</div>
+<div created="20200620124111552" creator="csw" modified="20200620124705320" modifier="csw" tags="" title="Ikea Light Remote Binding">
+<pre>Topic: `zigbee2mqtt/bridge/bind/&lt;remote device name&gt;`
+
+Payload: `&lt;name of zigbee group&gt;`
+
+Mash one of the keys on the remote whilst you send the message to ensufre the remote is awake
+
+NOTE: after reset/re-pair, device is automatically bound to a group named `default_bind_group` - you first need to unbind from that, as the remote can only bind to one group at a time.
+
+See: [[https://www.zigbee2mqtt.io/devices/E1524_E1810.html]]</pre>
 </div>
 <div created="20200620093911203" creator="csw" modified="20200620100552356" modifier="csw" tags="" title="Test">
 <pre>This is a test - does it get saved?
