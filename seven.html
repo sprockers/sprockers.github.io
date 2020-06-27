@@ -179,6 +179,8 @@ Error message and password prompt
 
 <li>Add device to Zigbee Group</li>
 
+<li>Gledopto 2ID Controllers</li>
+
 <li>Ikea Light Remote Binding</li>
 
 <li>Test</li>
@@ -9611,7 +9613,7 @@ Error message and password prompt
 <div created="20200620092931962" creator="c" modified="20200620092937890" modifier="cs" title="$:/status/UserName">
 <pre>csw</pre>
 </div>
-<div created="20200620115913344" creator="csw" list="[[Ikea Light Remote Binding]] [[Add device to Zigbee Group]] [[Xiaomi Light Switch Relay Binding]] GettingStarted" modified="20200620115919686" modifier="csw" title="$:/StoryList">
+<div created="20200626185443207" creator="csw" list="[[Gledopto 2ID Controllers]] [[Add device to Zigbee Group]] GettingStarted" modified="20200626185443207" modifier="csw" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9788,6 +9790,22 @@ Payload: `&lt;device name&gt;`
 
 See [[https://www.zigbee2mqtt.io/information/groups.html|https://www.zigbee2mqtt.io/information/groups.html]]
 </pre>
+</div>
+<div created="20200627132536112" creator="csw" modified="20200627133000604" modifier="csw" tags="" title="Gledopto 2ID Controllers">
+<pre>In zigbee these are detected as one device, but with two endpoints.
+
+Here is the typical json payload for state etc:
+`{&quot;state_rgb&quot;:&quot;ON&quot;,&quot;color_rgb&quot;:{&quot;x&quot;:0.477,&quot;y&quot;:0.196},&quot;color_temp_rgb&quot;:9,&quot;brightness_rgb&quot;:254,&quot;state_cct&quot;:&quot;ON&quot;,&quot;brightness_cct&quot;:254,&quot;color_cct&quot;:{&quot;x&quot;:0.52558700949522,&quot;y&quot;:0.413461772751086},&quot;color_temp_cct&quot;:496,&quot;state&quot;:&quot;ON&quot;,&quot;brightness&quot;:254,&quot;color_temp&quot;:500,&quot;color&quot;:{&quot;x&quot;:0.172,&quot;y&quot;:0.747}}`
+
+Note how there are two sets of attributes, one with `_rgb`, and the other with `_cct`
+
+You can turn on/off each of the two endpoints via `state_rgb` and `state_cct`.
+
+You should also be able to address different mqtt topics, but in this case leaving off the end point suffixes:
+`zigbee2mqtt/&lt;devicename&gt;/rgb`
+`zigbee2mqtt/&lt;devicename&gt;/cct`
+
+Which method of addressing works best?</pre>
 </div>
 <div created="20200620124111552" creator="csw" modified="20200620124705320" modifier="csw" tags="" title="Ikea Light Remote Binding">
 <pre>Topic: `zigbee2mqtt/bridge/bind/&lt;remote device name&gt;`
