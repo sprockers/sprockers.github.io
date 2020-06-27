@@ -9791,8 +9791,12 @@ Payload: `&lt;device name&gt;`
 See [[https://www.zigbee2mqtt.io/information/groups.html|https://www.zigbee2mqtt.io/information/groups.html]]
 </pre>
 </div>
-<div created="20200627132536112" creator="csw" modified="20200627133000604" modifier="csw" tags="" title="Gledopto 2ID Controllers">
+<div created="20200627132536112" creator="csw" modified="20200627134225901" modifier="csw" tags="" title="Gledopto 2ID Controllers">
 <pre>In zigbee these are detected as one device, but with two endpoints.
+
+The endpoints are:
+* 11 - RGB
+* 15 - CCT
 
 Here is the typical json payload for state etc:
 `{&quot;state_rgb&quot;:&quot;ON&quot;,&quot;color_rgb&quot;:{&quot;x&quot;:0.477,&quot;y&quot;:0.196},&quot;color_temp_rgb&quot;:9,&quot;brightness_rgb&quot;:254,&quot;state_cct&quot;:&quot;ON&quot;,&quot;brightness_cct&quot;:254,&quot;color_cct&quot;:{&quot;x&quot;:0.52558700949522,&quot;y&quot;:0.413461772751086},&quot;color_temp_cct&quot;:496,&quot;state&quot;:&quot;ON&quot;,&quot;brightness&quot;:254,&quot;color_temp&quot;:500,&quot;color&quot;:{&quot;x&quot;:0.172,&quot;y&quot;:0.747}}`
